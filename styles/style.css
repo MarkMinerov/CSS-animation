@@ -1,0 +1,175 @@
+body {
+    overflow: hidden;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.viewer {
+    display: flex;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 200px;
+    left: 0;
+    transition: all .2s ease-in-out;
+    z-index: 2;
+    cursor: pointer;
+}
+
+.orange, .yellow, .red, .green, .purple {
+    width: 20%;
+    height: inherit;
+    transition: inherit;
+}
+
+.orange:hover, .yellow:hover, .red:hover, .green:hover, .purple:hover {
+    transform: scale(1.05);
+    z-index: 4;
+}
+
+
+/*COLORS*/
+.orange {
+    background: #f49542;
+}
+
+.red {
+    background: #f44441;
+}
+
+.purple {
+    background: #a042d6;
+}
+
+.green {
+    background: #42d655;
+}
+
+.yellow {
+    background: #e8ea4f;
+}
+
+
+/*HOVER EFFECTS*/
+.orange:hover {
+   background: #ff9d44;
+}
+
+.red:hover {
+    background: #ff4845;
+}
+
+.purple:hover {
+    background: #be4eff;
+}
+
+.green:hover {
+    background: #50ff64;
+}
+
+.yellow:hover {
+    background: #fdff54;
+}
+
+.block {
+    transition: all ease 1s;
+    width: 75px;
+    height: 75px;
+    border-radius: 100%;
+    position: absolute;
+    animation: mover 1s;
+    z-index: 1;
+    bottom: 0;
+}
+
+.block:hover {
+    opacity: 0.5;
+}
+
+/*SCRIPT*/
+
+@keyframes mover {
+    from {
+        left: 0;
+
+    }
+    50% {
+        left: 50%;
+        bottom: 75%;
+    }
+
+    to {
+        left: calc(100% - 75px);
+        bottom: 0;
+    }
+}
+
+@keyframes mover-purple {
+    from {
+        left: calc(50% - 37px);
+        bottom: 0;
+    }
+    50% {
+        bottom: 75%;
+        left: calc(50% - 37px);
+    }
+
+    to {
+        bottom: 0;
+        left: calc(50% - 37px);
+    }
+}
+
+/*SPAWNER*/
+
+.spawner {
+    width: 100%;
+    height: calc(100vh - 100px);
+    position: relative;
+    box-sizing: border-box;
+    z-index: 1;
+}
+
+.spawner-block {
+    position: absolute;
+    width: 75px;
+    height: 75px;
+    border-radius: 100%;
+    opacity: 1;
+    transition: all ease 10s;
+    animation: spawner-mover ease-in-out 10s;
+    z-index: 1;
+}
+
+@keyframes spawner-mover {
+    from {
+        top: -100px;
+    }
+
+    to {
+        top: 100%;
+        opacity: 0;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
